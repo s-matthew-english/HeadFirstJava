@@ -29,26 +29,28 @@ public class SimpleGui3C implements ActionListener {
   public void actionPerformed(ActionEvent event) {
     frame.repaint();
   }
-}
 
-class MyDrawPanel extends JPanel {
+  class MyDrawPanel extends JPanel {
 
-  public void paintComponent(Graphics g) {
-    Graphics2D g2d = (Graphics2D) g;
-    g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
+    public void paintComponent(Graphics g) {
+      Graphics2D g2d = (Graphics2D) g;
+      g2d.fillRect(0, 0, this.getWidth(), this.getHeight());
 
-    int red = (int)(Math.random() * 256);
-    int green = (int)(Math.random() * 256);
-    int blue = (int)(Math.random() * 256);
-    Color statColor = new Color(red, green, blue);
+      int red = (int)(Math.random() * 256);
+      int green = (int)(Math.random() * 256);
+      int blue = (int)(Math.random() * 256);
+      Color statColor = new Color(red, green, blue);
 
-    red = (int)(Math.random() * 256);
-    green = (int)(Math.random() * 256);
-    blue = (int)(Math.random() * 256);
-    Color endColor = new Color(red, green, blue);
+      red = (int)(Math.random() * 256);
+      green = (int)(Math.random() * 256);
+      blue = (int)(Math.random() * 256);
+      Color endColor = new Color(red, green, blue);
 
-    GradientPaint gradient = new GradientPaint(70, 70, statColor, 150, 150, endColor);
-    g2d.setPaint(gradient);
-    g2d.fillOval(70, 70, 100, 100);
+      GradientPaint gradient = new GradientPaint(70, 70, statColor, 150, 150, endColor);
+      g2d.setPaint(gradient);
+      g2d.fillOval(70, 70, 100, 100);
+    }
   }
 }
+
+
