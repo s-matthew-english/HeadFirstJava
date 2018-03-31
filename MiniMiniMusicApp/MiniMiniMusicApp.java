@@ -34,9 +34,21 @@ public class MiniMiniMusicApp {
       * you'll have to care about are the arguments to the setMessage() method, and the arguments
       * to the MIDIEvent constructor. We'll look at those arguments on the next page.
       */
-      ShortMessage a = new ShortMessage();
-      a.setMessage(144, 1, 44, 100);
+      ShortMessage a = new ShortMessage();    // Make a Message
+      a.setMessage(144, 1, 44, 100);          // This message says, "start playing note `44`"
+     /**
+      * The instructions are in the message, but the MIDIEvent adds the moment in time when the
+      * instruction should be triggered. This MIDIEvent says to trigger message `a` at the first
+      * beat (beat 1).
+      */
       MidiEvent noteOn = new MidiEvent(a, 1);
+     /**
+      * A Track holds all the MIDIEvent objects. The sequence organizes them according to when each
+      * event is supposed to happen, and then the Sequencer plays them back in that order. You can 
+      * have lots of events happening at the exact same moment in time. For example, you might want
+      * two notes played simultaneously, or even different instruments playing different sounds at
+      * the same time.
+      */
       track.add(noteOn);
 
       ShortMessage b = new ShortMessage();
