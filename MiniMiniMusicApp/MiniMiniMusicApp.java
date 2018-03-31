@@ -35,6 +35,12 @@ public class MiniMiniMusicApp {
       * to the MIDIEvent constructor. We'll look at those arguments on the next page.
       */
       ShortMessage a = new ShortMessage();    // Make a Message
+     /**
+      * 144: Message type
+      * 1:   Channel
+      * 44:  Note to play
+      * 100: Velocity 
+      */
       a.setMessage(144, 1, 44, 100);          // This message says, "start playing note `44`"
      /**
       * The instructions are in the message, but the MIDIEvent adds the moment in time when the
